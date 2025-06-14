@@ -13,27 +13,24 @@ const Search = () => {
   const  {data: movies, loading: moviesLoading, error: moviesError, refetch: loadMovies, reset} = useFetch(() => fetchMovies({query: searchQuery}), false);
   
    useEffect(() => {
-
     const timeoutId = setTimeout(async () => {
-      console.log('In Use Effect');
       
-       if (searchQuery.trim()) {
-        console.log('In First If');
-        
+       if (searchQuery.trim()) {   
+
         await loadMovies();
-        if(movies?.length > 0 && movies?.[0]){
-          console.log('Adding movie');
-          console.log(movies[0].title);
-          
-          await updateSearchCount(searchQuery, movies[0])
-        } 
+        
       } else{
         reset();
       }
     }, 500);
-
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
+
+    useEffect(() => {
+      if(movies?.length > 0 && movies?.[0]){  
+          updateSearchCount(searchQuery, movies[0])
+        } 
+    }, [movies])
 
   return (
     <View className='flex-1 bg-primary'>
