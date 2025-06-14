@@ -20,7 +20,7 @@ export default function Index() {
         minHeight: '100%',
         paddingBottom: 10
       }}>
-        <Image source={icons.logo} className="w-12 h-12 mt-20 mb-5 mx-auto"/>
+        <Image source={icons.logo} className="w-14 h-12 mt-20  mx-auto"/>
 
         {moviesLoading ? (
           <ActivityIndicator size="large" color="#0000ff" className="mt-10 self-center"/>
@@ -28,7 +28,7 @@ export default function Index() {
           <Text>Error: {moviesError?.message || 'An error occurred'}</Text>
         ) : (
            <View className="flex-1 mt-5">
-          <SearchBar onPress={() => router.push('/search')} placeHolder="Search for a movie..."/>
+          <SearchBar onPress={() => router.push('/search')} placeHolder="Search movies..."/>
             <>
               <Text className="text-lg text-white font-bold mt-5 mb-3">Latest Movies</Text>
 
