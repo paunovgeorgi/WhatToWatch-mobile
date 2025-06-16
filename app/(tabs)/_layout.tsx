@@ -34,13 +34,13 @@ const _layout = () => {
                 width: '100%',
                 height: '100%',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
             },
             tabBarStyle: {
                 backgroundColor: '#0f0D23',
                 borderRadius: 50,
                 marginHorizontal: 20,
-                marginBottom: 36,
+                marginBottom: 40,
                 height: 52,
                 position: 'absolute',
                 overflow: 'hidden',
@@ -74,14 +74,14 @@ const _layout = () => {
             tabBarIcon: ({ focused }) => <TabIcon  focused={focused} icon={icons.save} title="Saved"/>,
          }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="profile"
         options={{ 
             headerShown: false, 
             title: "Profile",
             tabBarIcon: ({ focused }) => <TabIcon  focused={focused} icon={icons.person} title="Profile"/>,
          }}
-      />
+      /> */}
     </Tabs>
   );
 };

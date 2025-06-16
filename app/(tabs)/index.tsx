@@ -1,5 +1,4 @@
 import MovieCard from "@/components/MovieCard";
-import SearchBar from "@/components/SearchBar";
 import TrendingCard from "@/components/TrendingCard";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
@@ -25,7 +24,7 @@ export default function Index() {
         minHeight: '100%',
         paddingBottom: 10
       }}>
-        <Image source={icons.logo} className="w-14 h-12 mt-20  mx-auto"/>
+        <Image source={icons.logo} className="w-16 h-12 mt-20  mx-auto"/>
 
         {moviesLoading || trendingLoading ? (
           <ActivityIndicator size="large" color="#0000ff" className="mt-10 self-center"/>
@@ -33,7 +32,7 @@ export default function Index() {
           <Text>Error: {moviesError?.message || 'An error occurred'}</Text>
         ) : (
            <View className="flex-1 mt-5">
-          <SearchBar onPress={() => router.push('/search')} placeHolder="Search movies..."/>
+          {/* <SearchBar onPress={() => router.push('/search')} placeHolder="Search movies..."/> */}
 
           {trendingMovies && (
             <View className="mt-10">
