@@ -22,7 +22,7 @@ const Search = () => {
       } else{
         reset();
       }
-    }, 500);
+    }, 600);
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
 
@@ -50,9 +50,9 @@ const Search = () => {
         ListHeaderComponent={
           <>
             <View className='flex-row justify-center w-full mt-20 items-center'>
-              <Image source={icons.logo} className='w-16 h-12'/>
+              <Image source={icons.logo} className='w-20 h-16'/>
             </View>
-            <View className='my-5'>
+            <View className='mb-5 mt-10'>
               <SearchBar 
                 placeHolder='Search movies...'
                 value={searchQuery}
